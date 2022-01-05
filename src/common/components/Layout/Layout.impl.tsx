@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from 'react';
 import { LayoutProps } from "./Layout.interface";
+import SideBar from '../SideBar'
 
 const Layout = ({ children }: LayoutProps) => {
     return (
@@ -8,8 +9,10 @@ const Layout = ({ children }: LayoutProps) => {
             <Head>
                 <title>no name</title>
             </Head>
-            <header></header>
-            <main>{children}</main>
+            <div style={{display: "flex", flexDirection: 'row', height: "100vh", width: "100vw"}}>
+                <SideBar/>
+                {children}
+            </div>
         </>
     )
 }
